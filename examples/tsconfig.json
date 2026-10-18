@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": ["node"],
+    "skipLibCheck": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "paths": {
+      "@newfoundcodes/helvetium-apiary": ["../src/index.ts"],
+      "@newfoundcodes/helvetium-apiary/stores": ["../src/stores/index.ts"],
+      "@newfoundcodes/helvetium-apiary/boot": ["../src/boot.ts"],
+      "@newfoundcodes/helvetium-apiary/node": ["../src/node.ts"]
+    }
+  },
+  "include": ["*.ts"]
+}
