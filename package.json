@@ -1,6 +1,6 @@
 {
   "name": "@newfoundcodes/helvetium-apiary",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Production-oriented TypeScript runtime for durable jobs, queues, cron scheduling, workers, notifications, workflows, and atomic coordination for Helvetium web framework.",
   "type": "module",
   "sideEffects": false,
