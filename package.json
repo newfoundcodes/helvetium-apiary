@@ -1,0 +1,78 @@
+{
+  "name": "@newfoundcodes/helvetium-apiary",
+  "version": "0.1.0",
+  "description": "Production-oriented TypeScript runtime for durable jobs, queues, cron scheduling, workers, notifications, workflows, and atomic coordination for Helvetium web framework.",
+  "type": "module",
+  "sideEffects": false,
+  "license": "AGPL-3.0-only",
+  "engines": {
+    "node": ">=20"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "tests",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "SECURITY.md",
+    "docs",
+    "examples",
+    "mkdocs.yml",
+    "requirements-docs.txt",
+    "VALIDATION.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./stores": {
+      "types": "./dist/stores/index.d.ts",
+      "import": "./dist/stores/index.js"
+    },
+    "./boot": {
+      "types": "./dist/boot.d.ts",
+      "import": "./dist/boot.js"
+    },
+    "./node": {
+      "types": "./dist/node.d.ts",
+      "import": "./dist/node.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint .",
+    "clean": "rm -rf dist coverage site",
+    "build": "npm run clean && tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "examples:typecheck": "tsc -p examples/tsconfig.json --noEmit",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "coverage": "npm run build && node --experimental-test-coverage --test tests/*.test.mjs",
+    "prepublishOnly": "npm run typecheck && npm run examples:typecheck && npm test"
+  },
+  "devDependencies": {
+    "@newfoundcodes/helvetium-boot": ">=0.1.0",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "@types/node": "^26.4.1",
+    "eslint": "^10.10.0",
+    "prettier": "^3.9.6",
+    "typescript": "^6.0.0",
+    "typescript-eslint": "^8.69.0"
+  },
+  "keywords": [
+    "helvetium",
+    "jobs",
+    "queue",
+    "cron",
+    "worker",
+    "scheduler",
+    "background-jobs",
+    "locking",
+    "notifications",
+    "typescript"
+  ]
+}
